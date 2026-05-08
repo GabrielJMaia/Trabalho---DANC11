@@ -1,0 +1,1598 @@
+/* style.css NOVO VISUAL GAMER */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  background:#111111;
+  color:#f5f5f5;
+  font-family:'Poppins', sans-serif;
+  overflow-x:hidden;
+  padding-top: 80px
+}
+
+/* FUNDO */
+.particles{
+  position:fixed;
+  width:100%;
+  height:100%;
+  background:
+    radial-gradient(circle at top left, rgba(255,0,0,.08), transparent 300px),
+    radial-gradient(circle at bottom right, rgba(255,140,0,.08), transparent 300px);
+  z-index:-1;
+}
+
+/* Estrutura do Cabeçalho */
+section,
+footer{
+  scroll-margin-top: 120px;
+}
+
+.header-neon {
+    background:#1b1b1b; 
+    padding: 10px 0;
+    border-bottom: 2px solid #ff3c00; /* Borda preta sólida para profundidade */
+    /* ADICIONE ESTAS LINHAS */
+    position: fixed;   /* Fixa no topo */
+    top: 0;            /* Cola no limite superior */
+    left: 0;           /* Cola no limite esquerdo */
+    width: 100%;       /* Garante que ocupe toda a largura */
+    z-index: 1000;     /* Garante que fique acima de tudo */
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between; /* Separa esquerda e direita */
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Lado Esquerdo: Logo e Menu */
+.logo-and-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.logo-container h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #ff9900; /* Cor base do texto: laranja */
+}
+
+.logo-container i {
+    font-size: 1.8rem;
+    margin-right: 10px;
+}
+
+.nav-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-menu li {
+    margin: 0 8px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #4da6ff; /* Cor base azul */
+    font-weight: bold;
+    font-size: 0.9rem;
+    /* Neon limpo: apenas uma camada de brilho */
+    text-shadow: 0 0 8px rgba(77, 166, 255, 0.5); 
+    transition: 0.3s;
+}
+
+/* Lado Direito: Gráficos */
+.right-neon-graphics {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.neon-graphic {
+    font-size: 1.6rem;
+}
+
+/* ARCADE text style */
+.neon-graphic.arcade {
+    font-family: 'Courier New', Courier, monospace; /* Fonte mono para estilo retro */
+    font-weight: bold;
+    color: #ffff33; /* Cor base: amarelo */
+}
+
+/* LInha Neon */
+.neon-line-container {
+    margin-top: 5px;
+}
+
+
+/* ========================================= */
+/* Efeito Neon Principal - O Segredo */
+/* ========================================= */
+
+/* Cores de brilho para os elementos à direita */
+.cyan { color: #00ffff; }
+.pink { color: #ff00ff; }
+.yellow { color: #ffff00; }
+
+
+
+/* Sobrescrevendo o brilho para o texto "DANCEZONE GAMER" e ícone gamepad */
+.logo-container h1, .logo-container i {
+    color: #ff9900;
+    text-shadow:
+        0 0 5px rgba(255, 153, 0, 0.6),
+        0 0 10px rgba(255, 102, 0, 0.4); /* Brilho reduzido e levemente transparente */
+}
+
+/* Sobrescrevendo o brilho para o menu azul */
+.nav-menu a {
+text-shadow: 0 0 4px rgba(77, 166, 255, 0.5);
+}
+
+/* Sobrescrevendo o brilho para os gráficos à direita */
+.right-neon-graphics .cyan {
+    text-shadow: 0 0 5px #fff, 0 0 10px #00ffff, 0 0 20px #00cccc, 0 0 30px #009999;
+}
+.right-neon-graphics .pink {
+    text-shadow: 0 0 5px #fff, 0 0 10px #ff00ff, 0 0 20px #cc00cc, 0 0 30px #990099;
+}
+.right-neon-graphics .yellow {
+    text-shadow: 0 0 5px #fff, 0 0 10px #ffff00, 0 0 20px #cccc00, 0 0 30px #999900;
+}
+
+/* Brilho para a Linha Neon */
+/* Criando a bolinha verde manualmente */
+.status-dot-green {
+    width: 10px;
+    height: 10px;
+    background-color: #2ecc71; /* Verde vivo */
+    border-radius: 50%;        /* Faz ficar redonda */
+    display: inline-block;     /* Permite ficar na mesma linha do texto */
+    margin-right: 3px;         /* Espaço entre ela e a palavra Online */
+    vertical-align: middle;    /* Alinha com o meio do texto */
+    
+    /* Brilho neon verde */
+    box-shadow: 
+        0 0 5px #fff, 
+        0 0 10px #2ecc71, 
+        0 0 15px #27ae60;
+}
+
+/* Faz a bolinha brilhar (pulsar) */
+.status-dot-green {
+    animation: neon-pulse 1.5s infinite alternate;
+}
+
+@keyframes neon-pulse {
+    from {
+        opacity: 1;
+        box-shadow: 0 0 5px #fff, 0 0 10px #2ecc71;
+    }
+    to {
+        opacity: 0.7;
+        box-shadow: 0 0 2px #fff, 0 0 5px #2ecc71;
+    }
+}
+
+/* Efeito ao passar o mouse (hover) */
+.neon-item:hover {
+    text-shadow:
+        0 0 8px #fff,
+        0 0 15px #ff9900,
+        0 0 25px #ff9900,
+        0 0 35px #ffcc00,
+        0 0 45px #ffcc00 !important; /* Brilha mais no hover */
+}
+
+/* ========================================= */
+/* Efeito de "Piscar" (Flicker) Aleatório */
+/* ========================================= */
+
+/* Esta classe será adicionada e removida via JavaScript */
+.flicker {
+    opacity: 0.05 !important;
+
+    text-shadow: none !important;
+
+    filter: brightness(0.2);
+
+    transition: none !important;
+}
+
+/* CARDS */
+.cards-top{
+  width:90%;
+  margin:50px auto;
+  display:flex;
+  justify-content:space-between;
+  gap:30px;
+  flex-wrap:wrap;
+}
+
+.top-card{
+  flex:1;
+  min-width:250px;
+  background:#1e1e1e;
+  border:2px solid #2d2d2d;
+  border-radius:15px;
+  overflow:hidden;
+  transition:.4s;
+  box-shadow:0 0 10px rgba(0,0,0,.4);
+}
+
+.top-card:hover{
+  transform:translateY(-8px);
+  border-color:#ff6a00;
+  box-shadow:0 0 20px rgba(255,106,0,.3);
+}
+
+.top-card img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+}
+
+.top-card h3{
+  padding:20px;
+  text-align:center;
+  color:#ff6a00;
+}
+
+/* SEÇÕES */
+.content-section{
+  width:90%;
+  margin:70px auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:40px;
+  flex-wrap:wrap;
+}
+
+.reverse{
+  flex-direction:row-reverse;
+}
+
+.image-box{
+  flex:1;
+  min-width:300px;
+}
+
+.image-box img{
+  width:100%;
+  border-radius:18px;
+  border:3px solid #2b2b2b;
+  box-shadow:0 0 15px rgba(0,0,0,.5);
+}
+
+.text-box{
+  flex:1;
+  min-width:300px;
+}
+
+.text-box h2{
+  font-family:'Orbitron', sans-serif;
+  color:#ff6a00;
+  margin-bottom:20px;
+}
+
+.text-box p{
+  line-height:1.8;
+  color:#d5d5d5;
+}
+
+/* INFO */
+.info{
+  width:100%;
+  padding:60px 10%;
+  background:#1a1a1a;
+  border-top:2px solid #2d2d2d;
+  border-bottom:2px solid #2d2d2d;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+
+  text-align:center;
+}
+
+.info h2{
+  color:#ff6a00;
+  margin-bottom:20px;
+  font-family:'Orbitron', sans-serif;
+}
+
+.info p{
+  color:#d5d5d5;
+  line-height:1.8;
+  max-width:800px;
+}
+
+.info-box{
+  margin-bottom:50px;
+
+  padding-bottom:40px;
+
+  border-bottom:1px solid #333;
+}
+
+.info-box:last-child{
+  margin-bottom:0;
+  padding-bottom:0;
+  border-bottom:none;
+}
+
+.info-image{
+  width:100%;
+
+  display:flex;
+  justify-content:center;
+
+  margin:40px 0;
+}
+
+.info-image img{
+  width:100%;
+  max-width:500px;
+
+  border-radius:20px;
+
+  border:2px solid #ff6a00;
+
+  box-shadow:
+    0 0 15px rgba(255,106,0,.3);
+}
+
+.toggle-info{
+  margin-top:20px;
+  padding:12px 20px;
+
+  background:#111;
+  border:2px solid #ff6a00;
+
+  color:#ff6a00;
+  border-radius:10px;
+
+  cursor:pointer;
+  font-weight:bold;
+
+  transition:.3s;
+}
+
+.toggle-info:hover{
+  background:#ff6a00;
+  color:#fff;
+
+  box-shadow:0 0 15px rgba(255,106,0,.5);
+}
+
+/* BLOCO EXTRA */
+
+.extra-info{
+  opacity:0;
+  transform:translateY(-10px);
+
+  max-height:0;
+  overflow:hidden;
+
+  transition:
+    max-height .7s ease,
+    opacity .5s ease,
+    transform .5s ease,
+    padding .4s ease;
+
+  margin-top:20px;
+  width:100%;
+
+  text-align:center;
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+.extra-info.active{
+  opacity:1;
+  transform:translateY(0);
+
+  max-height:1500px;
+
+  padding-top:20px;
+}
+
+/* GRID VIDEOS */
+
+.video-grid{
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+  justify-content:center;
+  align-items:flex-start;
+}
+
+/* WRAPPER */
+
+.video-wrapper{
+  flex: 1;
+  min-width:220px;
+
+  overflow:visible;
+
+  padding:15px;
+}
+
+/* VIDEO */
+
+.video-container{
+  position:relative;
+
+  width:100%;
+  padding-bottom:56.25%;
+
+  height:0;
+
+  border-radius:18px;
+  border:2px solid #ff6a00;
+
+  background:#000;
+
+  transition:
+    transform .4s ease,
+    box-shadow .4s ease;
+
+  box-shadow:
+    0 0 10px rgba(255,106,0,.4),
+    0 0 25px rgba(255,106,0,.2);
+
+  z-index:1;
+}
+
+.video-container:hover{
+  transform:scale(1.03);
+
+  box-shadow:
+    0 0 20px rgba(255,106,0,.7),
+    0 0 40px rgba(255,106,0,.5);
+
+  z-index:10;
+}
+
+.video-container iframe{
+  position:absolute;
+
+  top:0;
+  left:0;
+
+  width:100%;
+  height:100%;
+
+  border:none;
+  border-radius:16px;
+}
+
+.video-container video{
+  position:absolute;
+
+  top:0;
+  left:0;
+
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+
+  border-radius:16px;
+}
+
+/* FOOTER */
+footer{
+  margin-top:0px;
+  padding:50px 10%;
+  background:#0d0d0d;
+  text-align:center;
+  border-top:3px solid #ff3c00;
+}
+
+footer h3{
+  color:#ff6a00;
+  font-family:'Orbitron', sans-serif;
+  margin-bottom:15px;
+}
+
+footer p{
+  color:#bdbdbd;
+  margin-bottom:20px;
+}
+
+.socials{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  margin-bottom:20px;
+  flex-wrap:wrap;
+}
+
+.socials a{
+  color:#f5f5f5;
+  text-decoration:none;
+  transition:.3s;
+}
+
+.socials a:hover{
+  color:#ff6a00;
+}
+
+footer span{
+  color:#777;
+}
+
+/* RESPONSIVO */
+@media(max-width:900px){
+
+  .content-section,
+  .reverse{
+    flex-direction:column;
+  }
+
+  header{
+    text-align:center;
+  }
+
+  nav{
+    justify-content:center;
+  }
+}
+
+/* =========================================
+COMUNIDADE GAMER
+========================================= */
+
+.community-layout{
+  display:flex;
+  min-height:100vh;
+  background:#111;
+}
+
+/* =========================================
+SIDEBAR
+========================================= */
+
+.community-sidebar{
+  width:260px;
+  height:100vh;
+
+  position:fixed;
+  left:0;
+  top:0;
+
+  padding:22px;
+
+  background:linear-gradient(
+    180deg,
+    #101010,
+    #080808
+  );
+
+  border-right:2px solid #ff6a00;
+
+  z-index:100;
+}
+
+/* LOGO */
+
+.sidebar-logo{
+  width:100%;
+
+  padding:22px 18px;
+
+  border-radius:20px;
+
+  background:#161616;
+
+  border:2px solid #ff6a00;
+
+  text-align:center;
+
+  margin-bottom:35px;
+
+  box-shadow:
+    0 0 20px rgba(255,106,0,.18),
+    inset 0 0 15px rgba(255,106,0,.05);
+}
+
+.sidebar-logo h2{
+  color:#ff6a00;
+
+  font-size:1.3rem;
+
+  font-family:'Orbitron', sans-serif;
+
+  margin-bottom:8px;
+
+  text-shadow:
+    0 0 10px rgba(255,106,0,.4);
+}
+
+.sidebar-logo span{
+  color:#999;
+  font-size:.9rem;
+}
+
+/* MENU */
+
+.sidebar-nav{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.sidebar-logo,
+.forum-intro,
+.sidebar-nav a{
+  width:100%;
+}
+
+.nav-title{
+  color:#666;
+
+  font-size:.72rem;
+
+  letter-spacing:2px;
+
+  margin-top:12px;
+  margin-bottom:2px;
+}
+
+.sidebar-nav a{
+  text-decoration:none;
+
+  color:#f5f5f5;
+
+  background:#181818;
+
+  border:1px solid #2b2b2b;
+
+  border-radius:14px;
+
+  padding:13px 15px;
+
+  font-size:1rem;
+
+  transition:.3s;
+}
+
+.sidebar-nav a:hover{
+  background:#ff6a00;
+
+  border-color:#ff6a00;
+
+  transform:translateX(4px);
+
+  box-shadow:
+    0 0 15px rgba(255,106,0,.3);
+}
+
+/* =========================================
+CONTEUDO
+========================================= */
+
+.community-content{
+  width:100%;
+
+  margin-left:260px;
+
+  padding:50px 6%;
+}
+
+/* =========================================
+HERO
+========================================= */
+
+.forum-hero{
+  margin-bottom:60px;
+}
+
+.hero-card{
+  position:relative;
+
+  overflow:hidden;
+
+  padding:45px;
+
+  border-radius:28px;
+
+  background:linear-gradient(
+    135deg,
+    #1b1b1b,
+    #111
+  );
+
+  border:2px solid #2d2d2d;
+
+  box-shadow:
+    0 0 20px rgba(255,106,0,.08);
+}
+
+/* efeito glow */
+
+.hero-card::before{
+  content:"";
+
+  position:absolute;
+
+  top:-60px;
+  right:-60px;
+
+  width:180px;
+  height:180px;
+
+  border-radius:50%;
+
+  background:rgba(255,106,0,.07);
+}
+
+.hero-card::after{
+  content:"";
+
+  position:absolute;
+
+  bottom:-50px;
+  right:40px;
+
+  width:120px;
+  height:120px;
+
+  border-radius:50%;
+
+  background:rgba(255,106,0,.04);
+}
+
+.hero-card h1{
+  color:#ff6a00;
+
+  font-size:2.3rem;
+
+  margin-bottom:18px;
+
+  font-family:'Orbitron', sans-serif;
+}
+
+.hero-card p{
+  color:#cfcfcf;
+
+  line-height:1.8;
+
+  max-width:700px;
+
+  margin-bottom:35px;
+}
+
+/* STATS */
+
+.hero-stats{
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.stat-box{
+  min-width:150px;
+
+  padding:18px 22px;
+
+  border-radius:18px;
+
+  background:#151515;
+
+  border:1px solid #2b2b2b;
+}
+
+.stat-box strong{
+  display:block;
+
+  color:#ff6a00;
+
+  font-size:1.5rem;
+
+  margin-bottom:8px;
+}
+
+.stat-box span{
+  color:#999;
+}
+
+/* =========================================
+SEÇÕES
+========================================= */
+
+.recent-topics,
+.topics-page,
+.create-topic-page{
+  margin-top:70px;
+}
+
+.section-title{
+  color:#ff6a00;
+
+  margin-bottom:25px;
+
+  font-family:'Orbitron', sans-serif;
+}
+
+/* HEADER */
+
+.section-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  margin-bottom:25px;
+}
+
+.section-header h2{
+  color:#ff6a00;
+
+  font-family:'Orbitron', sans-serif;
+}
+
+.view-all{
+  color:#ff6a00;
+
+  text-decoration:none;
+
+  transition:.3s;
+}
+
+.view-all:hover{
+  transform:translateX(5px);
+}
+
+/* =========================================
+TOPICOS RECENTES
+========================================= */
+
+.recent-topics-grid{
+  display:grid;
+
+  grid-template-columns:
+    repeat(auto-fit,minmax(260px,1fr));
+
+  gap:20px;
+}
+
+.recent-card{
+  background:#1a1a1a;
+
+  border:2px solid #2d2d2d;
+
+  border-radius:20px;
+
+  padding:22px;
+
+  transition:.3s;
+}
+
+.recent-card:hover{
+  transform:translateY(-5px);
+
+  border-color:#ff6a00;
+
+  box-shadow:
+    0 0 18px rgba(255,106,0,.15);
+}
+
+.recent-card h3{
+  color:#ff6a00;
+
+  margin-bottom:12px;
+}
+
+.recent-card p{
+  color:#cfcfcf;
+
+  line-height:1.7;
+}
+
+/* =========================================
+FORMULARIO
+========================================= */
+
+.topic-form{
+  display:flex;
+  flex-direction:column;
+
+  gap:16px;
+}
+
+.topic-form input,
+.topic-form textarea{
+  background:#1a1a1a;
+
+  border:2px solid #2d2d2d;
+
+  border-radius:16px;
+
+  padding:16px;
+
+  color:#fff;
+
+  transition:.3s;
+}
+
+.topic-form textarea{
+  min-height:180px;
+  resize:vertical;
+}
+
+.topic-form input:focus,
+.topic-form textarea:focus{
+  outline:none;
+
+  border-color:#ff6a00;
+
+  box-shadow:
+    0 0 15px rgba(255,106,0,.2);
+}
+
+.topic-form button{
+  width:220px;
+
+  padding:15px;
+
+  border:none;
+
+  border-radius:14px;
+
+  background:#ff6a00;
+
+  color:#fff;
+
+  font-weight:bold;
+
+  cursor:pointer;
+
+  transition:.3s;
+}
+
+.topic-form button:hover{
+  transform:translateY(-3px);
+
+  box-shadow:
+    0 0 20px rgba(255,106,0,.35);
+}
+
+/* =========================================
+TOPICOS
+========================================= */
+
+.topics-container{
+  display:flex;
+  flex-direction:column;
+  gap:25px;
+}
+
+.topic-card{
+  position:relative;
+
+  background:#1a1a1a;
+
+  border:2px solid #262626;
+
+  border-radius:22px;
+
+  padding:25px;
+
+  transition:.3s;
+}
+
+.topic-card:hover{
+  border-color:#ff6a00;
+
+  box-shadow:
+    0 0 18px rgba(255,106,0,.12);
+}
+
+.topic-card h3{
+  color:#ff6a00;
+
+  margin-bottom:12px;
+}
+
+.topic-card p{
+  color:#d5d5d5;
+
+  line-height:1.7;
+}
+
+/* =========================================
+RESPOSTAS
+========================================= */
+
+.reply-box{
+  margin-top:22px;
+
+  display:flex;
+  flex-direction:column;
+
+  gap:12px;
+}
+
+.reply-box textarea{
+  background:#101010;
+
+  border:2px solid #2d2d2d;
+
+  border-radius:12px;
+
+  padding:12px;
+
+  color:#fff;
+}
+
+.reply-box button{
+  width:160px;
+
+  background:#ff6a00;
+
+  border:none;
+
+  border-radius:12px;
+
+  padding:11px;
+
+  color:#fff;
+
+  cursor:pointer;
+}
+
+.replies{
+  margin-top:20px;
+
+  display:flex;
+  flex-direction:column;
+
+  gap:12px;
+}
+
+.reply{
+  background:#101010;
+
+  border-left:4px solid #ff6a00;
+
+  border-radius:12px;
+
+  padding:14px;
+
+  color:#d5d5d5;
+}
+
+/* =========================================
+LOGIN / USUARIOS
+========================================= */
+
+.auth-panel{
+  margin-top:30px;
+
+  display:flex;
+  flex-direction:column;
+
+  gap:10px;
+}
+
+.auth-panel input{
+  background:#181818;
+
+  border:1px solid #2d2d2d;
+
+  border-radius:12px;
+
+  padding:12px;
+
+  color:#fff;
+}
+
+.auth-panel input:focus{
+  outline:none;
+
+  border-color:#ff6a00;
+}
+
+.auth-panel button{
+  background:#ff6a00;
+
+  border:none;
+
+  border-radius:12px;
+
+  padding:12px;
+
+  color:#fff;
+
+  cursor:pointer;
+
+  transition:.3s;
+}
+
+.auth-panel button:hover{
+  box-shadow:
+    0 0 15px rgba(255,106,0,.3);
+}
+
+.auth-panel hr{
+  border:none;
+
+  height:1px;
+
+  background:#2d2d2d;
+
+  margin:10px 0;
+}
+
+#loggedUser{
+  color:#ff6a00;
+
+  margin-top:10px;
+
+  font-size:.95rem;
+}
+
+/* DELETE */
+
+.delete-topic{
+  margin-top:18px;
+
+  background:#ff3c3c;
+
+  border:none;
+
+  color:#fff;
+
+  padding:10px 15px;
+
+  border-radius:10px;
+
+  cursor:pointer;
+}
+
+.topic-author{
+  display:block;
+
+  color:#999;
+
+  margin-bottom:15px;
+
+  font-size:.9rem;
+}
+
+/* =========================================
+AÇÕES TOPICO
+========================================= */
+
+.topic-actions{
+  display:flex;
+
+  gap:12px;
+
+  margin-top:20px;
+}
+
+.edit-topic,
+.delete-topic{
+  border:none;
+
+  padding:10px 16px;
+
+  border-radius:10px;
+
+  color:#fff;
+
+  cursor:pointer;
+
+  transition:.3s;
+}
+
+.edit-topic{
+  background:#ff9800;
+}
+
+.edit-topic:hover{
+  box-shadow:
+    0 0 15px rgba(255,152,0,.3);
+}
+
+.delete-topic{
+  background:#ff3c3c;
+}
+
+.delete-topic:hover{
+  box-shadow:
+    0 0 15px rgba(255,0,0,.3);
+}
+
+/* =========================================
+DELETE ADMIN
+========================================= */
+
+.admin-delete{
+  position:absolute;
+
+  top:15px;
+  right:15px;
+
+  width:34px;
+  height:34px;
+
+  border:none;
+
+  border-radius:50%;
+
+  background:linear-gradient(
+    135deg,
+    #ff7b00,
+    #ff4d00
+  );
+
+  color:#fff;
+
+  font-size:1rem;
+
+  font-weight:bold;
+
+  cursor:pointer;
+
+  transition:.3s;
+
+  box-shadow:
+    0 0 12px rgba(255,106,0,.25);
+}
+
+.admin-delete:hover{
+  transform:scale(1.12);
+
+  box-shadow:
+    0 0 18px rgba(255,106,0,.45);
+}
+
+/* =========================================
+ESCONDER LOGIN
+========================================= */
+
+.auth-panel.logged input,
+.auth-panel.logged button:not(#logoutBtn){
+  display:none;
+}
+
+/* =========================================
+AÇÕES
+========================================= */
+
+.topic-actions{
+  display:flex;
+
+  gap:10px;
+
+  margin-top:18px;
+}
+
+.edit-topic,
+.delete-topic{
+  border:none;
+
+  padding:9px 14px;
+
+  border-radius:12px;
+
+  cursor:pointer;
+
+  font-size:.9rem;
+
+  transition:.3s;
+
+  color:#fff;
+}
+
+.edit-topic{
+  background:#ff8a00;
+}
+
+.edit-topic:hover{
+  transform:translateY(-2px);
+
+  box-shadow:
+    0 0 15px rgba(255,138,0,.3);
+}
+
+.delete-topic{
+  background:#ff5a36;
+}
+
+.delete-topic:hover{
+  transform:translateY(-2px);
+
+  box-shadow:
+    0 0 15px rgba(255,90,54,.3);
+}
+
+/* EDIT INLINE */
+
+.edit-area{
+  display:flex;
+  flex-direction:column;
+
+  gap:12px;
+
+  margin-top:15px;
+}
+
+.edit-area input,
+.edit-area textarea{
+  background:#101010;
+
+  border:2px solid #2d2d2d;
+
+  border-radius:14px;
+
+  padding:14px;
+
+  color:#fff;
+}
+
+.edit-area textarea{
+  min-height:140px;
+
+  resize:vertical;
+}
+
+.save-edit{
+  width:140px;
+
+  background:#ff6a00;
+
+  border:none;
+
+  border-radius:12px;
+
+  padding:12px;
+
+  color:#fff;
+
+  cursor:pointer;
+}
+
+/* DELETE REPLY */
+
+.reply{
+  position:relative;
+}
+
+.reply-delete{
+  position:absolute;
+
+  top:10px;
+  right:10px;
+
+  width:24px;
+  height:24px;
+
+  border:none;
+
+  border-radius:50%;
+
+  background:#ff6a00;
+
+  color:#fff;
+
+  cursor:pointer;
+
+  font-size:.8rem;
+}
+
+/* =========================================
+CONTADOR
+========================================= */
+
+.char-counter{
+  text-align:right;
+
+  color:#777;
+
+  font-size:.85rem;
+
+  margin-top:-5px;
+}
+
+/* =========================================
+USUARIOS
+========================================= */
+
+.users-panel{
+  margin-top:30px;
+
+  background:#161616;
+
+  border:1px solid #2d2d2d;
+
+  border-radius:18px;
+
+  padding:18px;
+}
+
+.users-panel h3{
+  color:#ff6a00;
+
+  margin-bottom:15px;
+}
+
+.user-item{
+  background:#101010;
+
+  border:1px solid #2d2d2d;
+
+  border-radius:12px;
+
+  padding:10px 12px;
+
+  margin-bottom:10px;
+
+  color:#ddd;
+
+  font-size:.9rem;
+}
+
+/* =========================================
+BOTÃO ADMIN
+========================================= */
+
+/* BOTÃO ADMIN IGUAL LOGIN */
+
+.admin-panel-btn{
+  display:block;
+  width:100%;
+  height:44px;
+  line-height:44px; /* centraliza o texto verticalmente */
+  text-align:center;
+
+  background:#ff6a00;
+  border:none;
+  border-radius:12px;
+  color:#fff;
+  text-decoration:none;
+  cursor:pointer;
+  transition:.3s;
+  font-size:1rem;
+  font-weight:normal;
+}
+
+.admin-panel-btn:hover{
+  box-shadow:
+    0 0 15px rgba(255,106,0,.3);
+}
+
+/* Mensagem do Admin */
+.mensagem.admin {
+  background-color: #fff3cd;  /* fundo amarelo claro */
+  border-left: 4px solid #ffc107; /* borda laranja à esquerda */
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.mensagem.admin .usuario {
+  font-weight: bold;
+  color: #856404; /* texto do admin */
+}
+
+/* SHORTS VIDEO */
+
+.video-container.shorts{
+  position: relative;
+
+  width: 100%;
+  max-width: 240px; /* diminui largura */
+
+  margin: auto;
+
+  padding-bottom: 140%; /* reduz altura */
+
+  height: 0;
+
+  overflow: hidden;
+
+  border-radius: 24px;
+
+  border: 2px solid #ff6a00;
+
+  background: #000;
+
+  box-shadow:
+    0 0 10px rgba(255,106,0,.4),
+    0 0 25px rgba(255,106,0,.2);
+
+  transition:
+    transform .4s ease,
+    box-shadow .4s ease;
+}
+
+.video-container.shorts:hover{
+  transform:scale(1.03);
+
+  box-shadow:
+    0 0 20px rgba(255,106,0,.7),
+    0 0 40px rgba(255,106,0,.5);
+}
+
+.video-container.shorts video{
+  position:absolute;
+
+  top:0;
+  left:0;
+
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+
+  border-radius:22px;
+}
+
+/* =========================================
+CURTIDAS
+========================================= */
+
+.like-area{
+  display:flex;
+  align-items:center;
+  gap:12px;
+
+  margin-top:18px;
+}
+
+.like-btn{
+  background:#ff6a00;
+
+  border:none;
+
+  padding:10px 14px;
+
+  border-radius:10px;
+
+  color:#fff;
+
+  cursor:pointer;
+
+  transition:.3s;
+}
+
+.like-btn:hover{
+  transform:translateY(-2px);
+
+  box-shadow:
+    0 0 15px rgba(255,106,0,.3);
+}
+
+.topic-like-info{
+  margin-top:14px;
+
+  color:#ffb066;
+
+  font-size:.9rem;
+}
+
